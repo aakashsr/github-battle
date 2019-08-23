@@ -16,8 +16,6 @@ class Badge extends React.Component {
   }
 }
 
-
-
 ReactDOM.render(
   <Badge
     name="James Priest"
@@ -26,4 +24,10 @@ ReactDOM.render(
   />,
   document.getElementById("app")
 );
+
+Badge.propTypes = {
+  name: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired
+};
 
