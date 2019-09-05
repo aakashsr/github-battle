@@ -8,7 +8,7 @@ export default class Popular extends Component {
       <ul class="flex-center">
         {languages.map(language => (
           <li key={language}>
-            <button className="nav-link">{language}</button>
+            <button className="btn-clear nav-link">{language}</button>
           </li>
         ))}
       </ul>
