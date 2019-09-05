@@ -1,21 +1,11 @@
-var React = require("react");
-var ReactDOM = require("react-dom");
-require("./index.css");
+import React from "react";
+import ReactDOM from "react-dom";
+import Popular from "./components/Popular";
 
+class App extends React.Component {
+  render() {
+    return <Popular />;
+  }
+}
 
-
-ReactDOM.render(
-  <Badge
-    name="James Priest"
-    username="james-priest"
-    img="https://avatars1.githubusercontent.com/u/27903822?s=460&v=4"
-  />,
-  document.getElementById("app")
-);
-
-Badge.propTypes = {
-  name: PropTypes.string.isRequired,
-  username: PropTypes.string.isRequired,
-  img: PropTypes.string.isRequired
-};
-
+ReactDOM.render(<App />, document.getElementById("app"));
