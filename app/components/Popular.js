@@ -8,6 +8,14 @@ export default class Popular extends Component {
     this.state = {
       selectedLanguage: "All"
     };
+
+    this.changeLanguage = this.changeLanguage.bind(this);
+  }
+
+  changeLanguage(language) {
+    this.setState({
+      selectedLanguage: language
+    });
   }
 
   render() {
@@ -16,7 +24,12 @@ export default class Popular extends Component {
       <ul class="flex-center">
         {languages.map(language => (
           <li key={language}>
-            <button className="btn-clear nav-link">{language}</button>
+            <button
+              onClick={() => this.changeLanguage(language)}
+              className="btn-clear nav-link"
+            >
+              {language}
+            </button>
           </li>
         ))}
       </ul>
