@@ -38,9 +38,10 @@ export default class Popular extends Component {
   }
 
   render() {
+    const { selectedLanguage } = this.state;
     return (
       <LanguagesNav
-        selected={this.state.selectedLanguage}
+        selected={selectedLanguage}
         onUpdateLanguage={this.updateLanguage}
       />
     );
