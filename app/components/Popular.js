@@ -40,10 +40,12 @@ export default class Popular extends Component {
   render() {
     const { selectedLanguage } = this.state;
     return (
-      <LanguagesNav
-        selected={selectedLanguage}
-        onUpdateLanguage={this.updateLanguage}
-      />
+      <React.Fragment>
+        <LanguagesNav
+          selected={selectedLanguage}
+          onUpdateLanguage={this.updateLanguage}
+        />
+      </React.Fragment>
     );
   }
 }
