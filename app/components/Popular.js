@@ -9,10 +9,10 @@ export default class Popular extends Component {
       selectedLanguage: "All"
     };
 
-    this.changeLanguage = this.changeLanguage.bind(this);
+    this.updateLanguage = this.updateLanguage.bind(this);
   }
 
-  changeLanguage(language) {
+  updateLanguage(language) {
     this.setState({
       selectedLanguage: language
     });
@@ -25,7 +25,12 @@ export default class Popular extends Component {
         {languages.map(language => (
           <li key={language}>
             <button
-              onClick={() => this.changeLanguage(language)}
+              style={
+                this.state.selectedLanguage === language
+                  ? { color: "rgb(187,46,31)" }
+                  : null
+              }
+              onClick={() => this.updateLanguage(language)}
               className="btn-clear nav-link"
             >
               {language}
