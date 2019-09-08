@@ -33,7 +33,7 @@ export default class Popular extends Component {
 
     this.state = {
       selectedLanguage: "All",
-      error:null,
+      error: null,
       repos:null
     };
 
