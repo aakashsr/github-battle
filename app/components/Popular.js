@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
+import {fetchPopularRepos } from "../utils/api";
 
 function LanguagesNav({ selected, onUpdateLanguage }) {
   const languages = ["All", "JavaScript", "Ruby", "Java", "CSS", "Python"];
@@ -31,7 +32,9 @@ export default class Popular extends Component {
     super(props);
 
     this.state = {
-      selectedLanguage: "All"
+      selectedLanguage: "All",
+      error:null,
+      repos:null
     };
 
     this.updateLanguage = this.updateLanguage.bind(this);
@@ -39,7 +42,9 @@ export default class Popular extends Component {
 
   updateLanguage(language) {
     this.setState({
-      selectedLanguage: language
+      selectedLanguage: language,
+      error:null,
+      repos:null
     });
   }
 
