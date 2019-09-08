@@ -10,7 +10,7 @@ function LanguagesNav({ selected, onUpdateLanguage, isLoading }) {
       {languages.map(language => (
         <li key={language}>
           <button
-            style={selected === language ? { color: "rgb(187,46,31)" } : null}
+            style={selected === language ? { color: "rgb(187,46,33)" } : null}
             onClick={() => onUpdateLanguage(language)}
             className="btn-clear nav-link"
           >
