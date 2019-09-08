@@ -41,6 +41,10 @@ export default class Popular extends Component {
     this.isLoading = this.isLoading.bind(this);
   }
 
+  componentDidMount() {
+    this.updateLanguage(this.state.selectedLanguage);
+  }
+
   updateLanguage(selectedLanguage) {
     this.setState({
       selectedLanguage: selectedLanguage, // Update the state of selectedLanguage ASA user clicks on button.
@@ -78,6 +82,8 @@ export default class Popular extends Component {
           onUpdateLanguage={this.updateLanguage}
           isLoading={this.isLoading}
         />
+        {this.isLoading() && <p>LOADING.....</p>}
+        {repos && <pre>{JSON.stringify(repos, null, 2)}</pre>}
       </React.Fragment>
     );
   }
