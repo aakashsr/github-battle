@@ -33,8 +33,8 @@ export default class Popular extends Component {
 
     this.state = {
       selectedLanguage: "All",
-      error: null, // Set the state of error and repos to 'null'
-      repos: {}
+      repos: {},
+      error: null // Set the state of error to 'null'
     };
 
     this.updateLanguage = this.updateLanguage.bind(this);
@@ -47,30 +47,33 @@ export default class Popular extends Component {
 
   updateLanguage(selectedLanguage) {
     this.setState({
-      selectedLanguage: selectedLanguage, // Update the state of selectedLanguage ASA user clicks on button.
-      error: null,
-      repos: null // ASA user clicks on button , set the state of 'error' and 'repos' again to 'null' so that we can show some message like "loading" to the user
-      // until the data get fetched.
+      selectedLanguage, // Update the state of selectedLanguage ASA user clicks on button.
+      error: null
     });
 
-    fetchPopularRepos(selectedLanguage)
-      .then(repos =>
-        this.setState({
-          repos: repos, // When the repositories are available , update the state of 'repos' to repos and set 'error' to 'null'
-          error: null
+    if (!this.state.repos[selectedLanguage]) {
+      fetchPopularRepos(selectedLanguage)
+        .then(data => {
+          this.setState(({ repos }) => ({
+            repos: {
+              ...repos,
+              [selectedLanguage]: data
+            }
+          }));
         })
-      )
-      .catch(() => {
-        console.log("Error fetching repos", error); // If there is any error in fetching data or resolving promises , catch() will will executed and error will be shown
+        .catch(() => {
+          console.warn("Error fetching repos: ", error); // If there is any error in fetching data or resolving promises , catch() will will executed and error will be shown
 
-        this.setState({
-          error: "There was an error fetching repos." // When error occurred , update the state of 'error' with some message.
+          this.setState({
+            error: "There was an error fetching repos." // When error occurred , update the state of 'error' with some message.
+          });
         });
-      });
+    }
   }
 
   isLoading() {
-    return this.state.repos === null && this.state.error === null;
+    const { selectedLanguage, repos, error } = this.state;
+    return !repos[selectedLanguage] && error === null;
   }
 
   render() {
@@ -83,7 +86,10 @@ export default class Popular extends Component {
           isLoading={this.isLoading}
         />
         {this.isLoading() && <p>LOADING.....</p>}
-        {repos && <pre>{JSON.stringify(repos, null, 2)}</pre>}
+        {error && <p>{error}</p>}
+        {repos[selectedLanguage] && (
+          <pre>{JSON.stringify(repos[selectedLanguage], null, 2)}</pre>
+        )}
       </React.Fragment>
     );
   }
