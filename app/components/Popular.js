@@ -34,7 +34,7 @@ export default class Popular extends Component {
     this.state = {
       selectedLanguage: "All",
       error: null, // Set the state of error and repos to 'null'
-      repos: null
+      repos: {}
     };
 
     this.updateLanguage = this.updateLanguage.bind(this);
