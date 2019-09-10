@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 import { fetchPopularRepos } from "../utils/api";
-import { FaUser, FaStar, FaCodeBranch, FaExclamationTriangle } from 'react-icons/fa'
+import { FaUser, FaStar, FaCodeBranch, FaExclamationTriangle } from 'react-icons/fa';
+import Battle from './Battle';
 
 function LanguagesNav({ selected, onUpdateLanguage, isLoading }) {
   const languages = ["All", "JavaScript", "Ruby", "Java", "CSS", "Python"];
