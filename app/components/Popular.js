@@ -31,7 +31,8 @@ function ReposGrid({ repos }) {
   console.log(repos);
   return (
     <ul className="grid space-around">
-      {repos.map((repo, index) => {         // Maping over each repo and displaying it as a card
+      {repos.map((repo, index) => {
+        // Maping over each repo and displaying it as a card
         const {
           name,
           owner,
@@ -42,13 +43,16 @@ function ReposGrid({ repos }) {
         } = repo;
         const { login, avatar_url } = owner;
 
-        return(
-          <li key='html_url' className='repo bg-light'>
-            <h4 className='header-lg center-text'>
-              #{index + 1}
-            </h4>
+        return (
+          <li key="html_url" className="repo bg-light">
+            <h4 className="header-lg center-text">#{index + 1}</h4>
+            <img
+              className="avatar"
+              src={avatar_url}
+              alt={`Avatar for ${login}`}
+            />
           </li>
-        )
+        );
       })}
     </ul>
   );
