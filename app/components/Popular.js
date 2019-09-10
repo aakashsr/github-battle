@@ -28,9 +28,28 @@ LanguagesNav.propTypes = {
 };
 
 function ReposGrid({ repos }) {
+  console.log(repos);
   return (
-    <ul>
-      <pre>{JSON.stringify(repos, null, 2)}</pre>
+    <ul className="grid space-around">
+      {repos.map((repo, index) => {         // Maping over each repo and displaying it as a card
+        const {
+          name,
+          owner,
+          html_url,
+          stargazers_count,
+          forks,
+          open_issues
+        } = repo;
+        const { login, avatar_url } = owner;
+
+        return(
+          <li key='html_url' className='repo bg-light'>
+            <h4 className='header-lg center-text'>
+              #{index + 1}
+            </h4>
+          </li>
+        )
+      })}
     </ul>
   );
 }
@@ -38,7 +57,6 @@ function ReposGrid({ repos }) {
 ReposGrid.propTypes = {
   repos: PropTypes.array.isRequired
 };
-
 
 export default class Popular extends Component {
   constructor(props) {
