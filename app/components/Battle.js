@@ -95,10 +95,28 @@ class Battle extends Component {
     };
   }
   render() {
+    const { playerOne, playerTwo } = this.state;
     return (
       <React.Fragment>
         <Instructions />
-        <PlayerInput label="Label" onSubmit={value => console.log(value)} />
+        <div className="players-container">
+          <h1 className="center-text header-lg">Players</h1>
+          <div className="row space-around">
+            {playerOne === null && (
+              <PlayerInput
+                label="Player One"
+                onSubmit={name => console.log(name)}
+              />
+            )}
+
+            {playerTwo === null && (
+              <PlayerInput
+                label="Player Two"
+                onSubmit={name => console.log(name)}
+              />
+            )}
+          </div>
+        </div>
       </React.Fragment>
     );
   }
