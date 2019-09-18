@@ -11,7 +11,7 @@ function getErrorMsg(message, username) {
 }
 
 function getProfile(username) {
-  return fetch(`https://api.github.com/users/${usename}${params}`)
+  return fetch(`https://api.github.com/users/${username}${params}`)
     .then(res => res.json())
     .then(profile => {
       if (profile.message) {
@@ -57,7 +57,7 @@ function getUserData(player) {
 }
 
 function sortPlayers(players) {
-  return player.sort((a, b) => b.score - a.score);
+  return players.sort((a, b) => b.score - a.score);
 }
 
 export function battle(players) {
