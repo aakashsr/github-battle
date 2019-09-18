@@ -94,6 +94,13 @@ class Battle extends Component {
       playerTwo: null
     };
   }
+
+  handleSubmit(id, player) {
+    this.setState({
+      [id]: player
+    });
+  }
+
   render() {
     const { playerOne, playerTwo } = this.state;
     return (
@@ -105,14 +112,14 @@ class Battle extends Component {
             {playerOne === null && (
               <PlayerInput
                 label="Player One"
-                onSubmit={name => console.log(name)}
+                onSubmit={player => this.handleSubmit("playerOne", player)}
               />
             )}
 
             {playerTwo === null && (
               <PlayerInput
                 label="Player Two"
-                onSubmit={name => console.log(name)}
+                onSubmit={player => this.handleSubmit("playerTwo", player)}
               />
             )}
           </div>
