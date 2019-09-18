@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import Results from "./Results";
 import {
+  
   FaUserFriends,
   FaFighterJet,
   FaTrophy,
   FaTimesCircle
 } from "react-icons/fa";
 import PropTypes from "prop-types";
+
 
 function Instructions() {
   return (
