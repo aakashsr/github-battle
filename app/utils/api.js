@@ -15,12 +15,36 @@ function getProfile(username) {
     .then(res => res.json())
     .then(profile => {
       if (profile.message) {
-        throw new Error(getErrorMsg(profile.message, username));
+        throw new Error(getErrorMsg(profile.message, username))
       }
 
-      return profile;
-    });
+      return profile
+    })
 }
+
+function getRepos(username) {
+  return fetch(`https://api.github.com/users/${username}/repos${params}&per_page=100`)
+      .then(res => res.json())
+      .then(repos => {
+        if (repos.message) {
+          throw new Error(getErrorMsg(repos.message,username))
+        }
+
+        return repos
+      })
+}
+
+function getUserData(player) {
+  return Promise.all([
+    getProfile(player),
+    getRepos(player)
+  ]).then( ([profile , repos]) => ({
+    profile,
+    score:1
+  }))
+}
+
+
 
 export function fetchPopularRepos(language) {
   const endpoint = window.encodeURI(
