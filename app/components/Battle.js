@@ -87,6 +87,13 @@ PlayerInput.propTypes = {
 };
 
 class Battle extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      playerOne: null,
+      playerTwo: null
+    };
+  }
   render() {
     return (
       <React.Fragment>
