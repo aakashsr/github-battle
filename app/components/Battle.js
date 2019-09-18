@@ -120,7 +120,8 @@ class Battle extends Component {
     super(props);
     this.state = {
       playerOne: null,
-      playerTwo: null
+      playerTwo: null,
+      battle: false
     };
   }
 
@@ -138,6 +139,13 @@ class Battle extends Component {
 
   render() {
     const { playerOne, playerTwo } = this.state;
+
+    {
+      if (this.state.battle === true) {
+        return <Results playerOne={playerOne} playerTwo={playerTwo} />;
+      }
+    }
+
     return (
       <React.Fragment>
         <Instructions />
@@ -169,6 +177,15 @@ class Battle extends Component {
               />
             )}
           </div>
+
+          {playerOne && playerTwo && (
+            <button
+              className="btn dark-btn btn-space"
+              onClick={() => this.setState({ battle: true })}
+            >
+              Battle
+            </button>
+          )}
         </div>
       </React.Fragment>
     );
