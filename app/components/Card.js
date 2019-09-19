@@ -1,6 +1,13 @@
 import React from "react";
 
-export default function Card({ header, subheader, avatar, href, name }) {
+export default function Card({
+  header,
+  subheader,
+  avatar,
+  href,
+  name,
+  children
+}) {
   return (
     <div className="card bg-light">
       <h4 className="header-lg center-text">{header}</h4>
@@ -11,6 +18,7 @@ export default function Card({ header, subheader, avatar, href, name }) {
           {name}
         </a>
       </h2>
+      {children}
     </div>
   );
 }
