@@ -4,13 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open",
-    "build": "webpack --config webpack.config.js"
+    "start": "webpack-dev-server"
   },
   "babel": {
     "presets": [
-      "env",
-      "react"
+      "@babel/preset-env",
+      "@babel/preset-react"
     ]
   },
   "author": "",
