@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 import Results from "./Results";
 import {
-  
   FaUserFriends,
   FaFighterJet,
   FaTrophy,
   FaTimesCircle
 } from "react-icons/fa";
 import PropTypes from "prop-types";
-
 
 function Instructions() {
   return (
@@ -125,6 +123,18 @@ class Battle extends Component {
       playerTwo: null,
       battle: false
     };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleReset = this.handleReset.bind(this);
+    this.onReset = this.onReset.bind(this);
+  }
+
+  onReset() {
+    this.setState({
+      playerOne: null,
+      playerTwo: null,
+      battle: false
+    });
   }
 
   handleSubmit(id, player) {
@@ -144,7 +154,13 @@ class Battle extends Component {
 
     {
       if (this.state.battle === true) {
-        return <Results playerOne={playerOne} playerTwo={playerTwo} />;
+        return (
+          <Results
+            playerOne={playerOne}
+            playerTwo={playerTwo}
+            onReset={this.onReset}
+          />
+        );
       }
     }
 
