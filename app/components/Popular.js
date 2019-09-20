@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import Battle from "./Battle";
 import Card from "./Card";
+import Loading from "./Loading"
 
 function LanguagesNav({ selected, onUpdateLanguage, isLoading }) {
   const languages = ["All", "JavaScript", "Ruby", "Java", "CSS", "Python"];
@@ -148,7 +149,7 @@ export default class Popular extends Component {
           onUpdateLanguage={this.updateLanguage}
           isLoading={this.isLoading}
         />
-        {this.isLoading() && <p>LOADING.....</p>}
+        {this.isLoading() && <Loading text="Fetching Repos" />}
         {error && <p className="center-text error">{error}</p>}
         {repos[selectedLanguage] && (
           <ReposGrid repos={repos[selectedLanguage]} />

@@ -76,7 +76,7 @@ export default class Results extends Component {
     const { winner, loser, error, loading, onReset } = this.state;
 
     if (loading === true) {
-      return <Loading />;
+      return <Loading text="Battling" />;
     }
 
     if (error) {
