@@ -46,13 +46,15 @@ export default class Tooltip extends Component {
   }
 
   render() {
+    const { hovering } = this.state;
+    const { text, children } = this.props;
     return (
       <div
         onMouseOver={this.mouseOver}
         onMouseOut={this.mouseOut}
         style={styles.container}
       >
-        {hovering === true && <div style={style.tooltip}>{text}</div>}
+        {hovering === true && <div style={styles.tooltip}>{text}</div>}
         {children}
       </div>
     );

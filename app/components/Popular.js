@@ -10,7 +10,8 @@ import {
 } from "react-icons/fa";
 import Battle from "./Battle";
 import Card from "./Card";
-import Loading from "./Loading"
+import Loading from "./Loading";
+import Tooltip from "./Tooltip";
 
 function LanguagesNav({ selected, onUpdateLanguage, isLoading }) {
   const languages = ["All", "JavaScript", "Ruby", "Java", "CSS", "Python"];
@@ -63,8 +64,10 @@ function ReposGrid({ repos }) {
             >
               <ul className="card-list">
                 <li>
-                  <FaUser color="rgb(255,191,116)" size={22} />
-                  <a href={"https://github.com/${login"}>{login}</a>
+                  <Tooltip text="Github username">
+                    <FaUser color="rgb(255,191,116)" size={22} />
+                    <a href={"https://github.com/${login"}>{login}</a>
+                  </Tooltip>
                 </li>
                 <li>
                   <FaStar color="rgb(255, 215, 0)" size={22} />
