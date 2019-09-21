@@ -51,7 +51,10 @@ export default class Tooltip extends Component {
         onMouseOver={this.mouseOver}
         onMouseOut={this.mouseOut}
         style={styles.container}
-      >Tooltip</div>
+      >
+        {hovering === true && <div style={style.tooltip}>{text}</div>}
+        {children}
+      </div>
     );
   }
 }
