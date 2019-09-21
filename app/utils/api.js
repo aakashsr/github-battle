@@ -44,6 +44,7 @@ function getStarCount(repos) {
 }
 
 function calculateScore(followers, repos) {
+  console.log(repos);
   return followers * 3 + getStarCount(repos);
 }
 

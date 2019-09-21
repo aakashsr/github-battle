@@ -13,7 +13,7 @@ const styles = {
     left: "50%",
     marginLeft: "-80px",
     borderRadius: "3px",
-    backgroundColor: "hsla(0, 0%, 20%, 0.9)",
+    backgroundColor: "hsla(0, 0%, 20%, 0.8)",
     padding: "7px",
     marginBottom: "5px",
     color: "#fff",
