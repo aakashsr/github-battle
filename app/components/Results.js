@@ -16,7 +16,7 @@ function ProfileList({ profile }) {
   return (
     <ul className="card-list">
       <li>
-        <FaUser color="rgb(239, 115, 115)" size={22} />
+        <FaUser color="rgb(239, 115, 116)" size={22} />
         {profile.name}
       </li>
       {profile.location && (
