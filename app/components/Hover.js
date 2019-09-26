@@ -33,5 +33,3 @@ export default class WithHover extends React.Component {
       )
   }
 }
-
-export default Hover;
