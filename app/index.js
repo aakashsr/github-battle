@@ -29,7 +29,8 @@ class App extends React.Component {
             <div className="container">
               <Nav />
 
-              <Popular />
+              <Route path="/" component={Popular} />
+              <Route path="/battle" component={Battle} />
             </div>
           </div>
         </ThemeProvider>
