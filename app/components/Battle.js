@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import PropTypes from "prop-types";
 import { ThemeConsumer } from "../contexts/theme";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 function Instructions() {
   return (
@@ -49,28 +49,20 @@ function Instructions() {
 }
 
 class PlayerInput extends Component {
-  constructor(props) {
-    super(props);
+  state = {
+    userName: ""
+  };
 
-    this.state = {
-      userName: ""
-    };
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleSubmit(event) {
+  handleSubmit = event => {
     event.preventDefault();
-
     this.props.onSubmit(this.state.username);
-  }
+  };
 
-  handleChange(event) {
+  handleChange = event => {
     this.setState({
       username: event.target.value
     });
-  }
+  };
 
   render() {
     return (
@@ -110,7 +102,6 @@ PlayerInput.propTypes = {
   label: PropTypes.string.isRequired
 };
 
-
 function PlayerPreview({ username, onReset, label }) {
   return (
     <ThemeConsumer>
@@ -139,36 +130,29 @@ function PlayerPreview({ username, onReset, label }) {
 }
 
 class Battle extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      playerOne: null,
-      playerTwo: null,
-    };
+  state = {
+    playerOne: null,
+    playerTwo: null
+  };
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleReset = this.handleReset.bind(this);
-    this.onReset = this.onReset.bind(this);
-  }
-
-  onReset() {
+  onReset = () => {
     this.setState({
       playerOne: null,
       playerTwo: null
     });
-  }
+  };
 
-  handleSubmit(id, player) {
+  handleSubmit = (id, player) => {
     this.setState({
       [id]: player
     });
-  }
+  };
 
-  handleReset(id) {
+  handleReset = (id, player) => {
     this.setState({
       [id]: null
     });
-  }
+  };
 
   render() {
     const { playerOne, playerTwo } = this.state;
@@ -209,7 +193,7 @@ class Battle extends Component {
             <Link
               className="btn dark-btn btn-space"
               to={{
-                pathname:'/battle/results',
+                pathname: "/battle/results",
                 search: `?playerOne=${playerOne}&playerTwo=${playerTwo}`
               }}
             >
