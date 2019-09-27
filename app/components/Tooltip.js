@@ -23,41 +23,15 @@ const styles = {
   }
 };
 
-export default class Tooltip extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      hovering: false
-    };
-
-    this.mouseOver = this.mouseOver.bind(this);
-    this.mouseOut = this.mouseOut.bind(this);
-  }
-
-  mouseOver() {
-    this.setState({
-      hovering: true
-    });
-  }
-
-  mouseOut() {
-    this.setState({
-      hovering: false
-    });
-  }
-
-  render() {
-    const { hovering } = this.state;
-    const { text, children } = this.props;
-    return (
-      <Hover
-        render={hovering => {
-          <div style={styles.container}>
-            {hovering === true && <div style={styles.tooltip}>{text}</div>}
-            {children}
-          </div>;
-        }}
-      ></Hover>
-    );
-  }
+export default function Tooltip({ text, children }) {
+  return (
+    <Hover>
+      {hovering => (
+        <div style={styles.container}>
+          {hovering === true && <div style={styles.tooltip}>{text}</div>}
+          {children}
+        </div>
+      )}
+    </Hover>
+  );
 }

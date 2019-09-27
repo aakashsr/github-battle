@@ -11,6 +11,8 @@ import {
 import Card from "./Card";
 import Loading from "./Loading";
 import Tooltip from "./Tooltip";
+import queryString from "query-string";
+import { Link } from "react-router-dom";
 
 function ProfileList({ profile }) {
   return (
@@ -58,7 +60,9 @@ export default class Results extends Component {
     };
   }
   componentDidMount() {
-    const { playerOne, playerTwo } = this.props;
+    const { playerOne, playerTwo } = queryString.parse(
+      this.props.location.search
+    );
 
     battle([playerOne, playerTwo])
       .then(players => {
@@ -78,7 +82,7 @@ export default class Results extends Component {
   }
 
   render() {
-    const { winner, loser, error, loading, onReset } = this.state;
+    const { winner, loser, error, loading } = this.state;
 
     if (loading === true) {
       return <Loading text="Battling" />;
@@ -110,9 +114,9 @@ export default class Results extends Component {
             <ProfileList profile={loser.profile} />
           </Card>
         </div>
-        <button onClick={this.props.onReset} className="btn dark-btn btn-space">
+        <Link to="/battle" className="btn dark-btn btn-space">
           Reset
-        </button>
+        </Link>
       </React.Fragment>
     );
   }
