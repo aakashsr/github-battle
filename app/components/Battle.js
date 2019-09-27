@@ -109,6 +109,7 @@ PlayerInput.propTypes = {
   label: PropTypes.string.isRequired
 };
 
+
 function PlayerPreview({ username, onReset, label }) {
   return (
     <ThemeConsumer>
