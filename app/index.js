@@ -27,7 +27,7 @@ class App extends React.Component {
           <div className="container">
             <Nav />
 
-            <Popular />
+            <Battle />
           </div>
         </div>
       </ThemeProvider>
