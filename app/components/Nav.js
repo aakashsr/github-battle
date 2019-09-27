@@ -1,6 +1,5 @@
 import React from "react";
 import { ThemeConsumer } from "../contexts/theme";
-import { FaSmile } from "react-icons/fa";
 
 export default function Nav() {
   return (
@@ -12,7 +11,7 @@ export default function Nav() {
             className="btn-clear"
             onClick={toggleTheme}
           >
-              { theme === 'light' ? 'FaSmile' : 'light'}
+              { theme === 'light' ? '🔦' : '💡'}
           </button>
         </nav>
       )}
