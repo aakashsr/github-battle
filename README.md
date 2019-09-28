@@ -17,3 +17,24 @@ React App (React Fundamentals Course)
   <img alt="react is dope" src="https://img.shields.io/badge/React-is%20dope%20%E2%AD%90-00D8FF.svg" />
 </a>
 </p>
+
+Ì¥• __Github Battle__ is a React App that pulls data  from the [Github API](https://developer.github.com/v3/) to achieve multiple actions like Github Users Battle, Most 
+Popular Repos and User Info, responsive and Service Worker running, animations with [gsap](https://greensock.com/gsap) super snappy for quick switching thanks to React 
+Virtual DOM Ì¥•
+
+Ì≥ñ This app is the final result of the course __React Fundamentals__ which you can find [here](https://learn.tylermcginnis.com) + other additions like animations and extra 
+functionality
+
+<p><a href="http://github-react-battle.surge.sh/" class="btn btn-primary btn-md">Launch App</a></p>
+</div>
+
+## Features
+
+* ‚öíÔ∏è __Simple__: Set up with Webpack and Babel [Webpack](https://webpack.js.org/) and using 
+[React](https://facebook.github.io/react/)
+
+* Ì≥ä __Real-time__: Data obtained from the [Github API](https://developer.github.com/v3/)
+
+* Ì≥± __Responsive__: Made mobile responsive with Flexbox
+
+* Ì¥• __Live__: Deployed with [Netlify](https://www.netlify.com/)
