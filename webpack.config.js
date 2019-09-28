@@ -14,7 +14,7 @@ module.exports = {
     filename: "index_bundle.js",
     publicPath: "/"
   },
-  mode: "development",
+  mode: "production",
   plugins: [
     new HtmlWebpackPlugin({
       template: "app/index.html"
