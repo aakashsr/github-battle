@@ -18,11 +18,11 @@ React App (React Fundamentals Course)
 </a>
 </p>
 
-Ì¥• __Github Battle__ is a React App that pulls data  from the [Github API](https://developer.github.com/v3/) to achieve multiple actions like Github Users Battle, Most 
+__Github Battle__ is a React App that pulls data  from the [Github API](https://developer.github.com/v3/) to achieve multiple actions like Github Users Battle, Most 
 Popular Repos and User Info, responsive and Service Worker running, animations with [gsap](https://greensock.com/gsap) super snappy for quick switching thanks to React 
 Virtual DOM Ì¥•
 
-Ì≥ñ This app is the final result of the course __React Fundamentals__ which you can find [here](https://learn.tylermcginnis.com) + other additions like animations and extra 
+ This app is the final result of the course __React Fundamentals__ which you can find [here](https://learn.tylermcginnis.com) + other additions like animations and extra 
 functionality
 
 <p><a href="http://github-react-battle.surge.sh/" class="btn btn-primary btn-md">Launch App</a></p>
@@ -30,11 +30,11 @@ functionality
 
 ## Features
 
-* ‚öíÔ∏è __Simple__: Set up with Webpack and Babel [Webpack](https://webpack.js.org/) and using 
+*  __Simple__: Set up with Webpack and Babel [Webpack](https://webpack.js.org/) and using 
 [React](https://facebook.github.io/react/)
 
-* Ì≥ä __Real-time__: Data obtained from the [Github API](https://developer.github.com/v3/)
+* __Real-time__: Data obtained from the [Github API](https://developer.github.com/v3/)
 
-* Ì≥± __Responsive__: Made mobile responsive with Flexbox
+* __Responsive__: Made mobile responsive with Flexbox
 
-* Ì¥• __Live__: Deployed with [Netlify](https://www.netlify.com/)
+* __Live__: Deployed with [Netlify](https://www.netlify.com/)
