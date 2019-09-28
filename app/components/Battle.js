@@ -206,4 +206,5 @@ class Battle extends Component {
   }
 }
 
+
 export default Battle;
