@@ -44,5 +44,5 @@ functionality
 ## Demo
 
 <div align="center">
-    <img src="ezgif.com-video-to-gif.gif"/>
+    <img src="git gif 2.gif"/>
 </div>
