@@ -38,3 +38,11 @@ functionality
 * __Responsive__: Made mobile responsive with Flexbox
 
 * __Live__: Deployed with [Netlify](https://www.netlify.com/)
+
+<!---  SCREENSHOOT   -->
+
+## Demo
+
+<div align="center">
+    <img src="./ezgif.com-video-to-gif.gif"/>
+</div>
