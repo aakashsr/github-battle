@@ -25,7 +25,7 @@ Virtual DOM í´¥
  This app is the final result of the course __React Fundamentals__ which you can find [here](https://learn.tylermcginnis.com) + other additions like animations and extra 
 functionality
 
-<p><a href="http://github-react-battle.surge.sh/" class="btn btn-primary btn-md">Launch App</a></p>
+<p><a href="https://hardcore-poitras-61f2bb.netlify.com/" class="btn btn-primary btn-md">Launch App</a></p>
 </div>
 
 ## Features
