@@ -19,7 +19,7 @@ export default function Nav() {
                 activeStyle={activeStyle}
                 className="nav-link"
               >
-                Search
+                Popular
               </NavLink>
             </li>
             <li>
@@ -29,7 +29,7 @@ export default function Nav() {
                 activeStyle={activeStyle}
                 className="nav-link"
               >
-                Popular
+                Search
               </NavLink>
             </li>
             <li>
