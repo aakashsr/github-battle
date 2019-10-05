@@ -24,7 +24,7 @@ export default function Nav() {
             </li>
             <li>
               <NavLink
-                to="/"
+                to="/search"
                 exact
                 activeStyle={activeStyle}
                 className="nav-link"
@@ -35,6 +35,7 @@ export default function Nav() {
             <li>
               <NavLink
                 to="/battle"
+                exact
                 activeStyle={activeStyle}
                 className="nav-link"
               >

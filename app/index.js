@@ -5,6 +5,7 @@ import { ThemeProvider } from "./contexts/theme";
 import Nav from "./components/Nav";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Loading from "./components/Loading";
+import Search from "./components/Search";
 
 const Popular = React.lazy(() => import("./components/Popular"));
 const Battle = React.lazy(() => import("./components/Battle"));
@@ -33,6 +34,7 @@ class App extends React.Component {
                   <Route exact path="/" component={Popular} />
                   <Route exact path="/battle" component={Battle} />
                   <Route path="/battle/results" component={Results} />
+                  <Route path="/search" component={Search} />
                   <Route render={() => <h1>404 Error</h1>} />
                 </Switch>
               </React.Suspense>
