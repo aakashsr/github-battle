@@ -1,6 +1,13 @@
 import React, { Component } from "react";
 import { ThemeConsumer } from "../contexts/theme";
 
+const search = {
+  centerStyle: {
+    width: "600px",
+    margin: "0 auto"
+  }
+};
+
 export default class Search extends Component {
   state = {
     userName: ""
@@ -15,7 +22,7 @@ export default class Search extends Component {
     return (
       <ThemeConsumer>
         {({ theme }) => (
-          <div>
+          <div style={search.centerStyle}>
             <h1 className="center-text header-lg">Instructions</h1>
             <div className="row player-inputs">
               <input
