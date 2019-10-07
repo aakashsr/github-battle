@@ -2,9 +2,9 @@ import React from 'react';
 
 const Birthday = () => {
     return (
-        <div>
-            <h1>You birthday is 3 Sep.</h1>
-        </div>
+      <div>
+        <h1 className="center-text header-lg">Octocat Day</h1>
+      </div>
     );
 }
 

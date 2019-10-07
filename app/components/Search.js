@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { ThemeConsumer } from "../contexts/theme";
+import { fetchPopularRepos } from "../utils/api";
 
 const search = {
   centerStyle: {
